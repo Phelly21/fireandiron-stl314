@@ -1,0 +1,133 @@
+/* Fire & Iron Station 314 — simple static site */
+:root{
+  --red:#c1121f;
+  --red-dark:#8d0801;
+  --gold:#f4b41a;
+  --ink:#141414;
+  --charcoal:#1e1e1e;
+  --paper:#f7f5f2;
+  --line:#3a3a3a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Segoe UI",Arial,Helvetica,sans-serif;
+  color:#1a1a1a;
+  background:var(--paper);
+  line-height:1.6;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--red)}
+
+/* Header / banner */
+.site-header{background:#000;text-align:center;padding:14px 10px;border-bottom:4px solid var(--red)}
+.site-header img{margin:0 auto;max-height:70px}
+
+/* Nav */
+nav{background:var(--charcoal);position:sticky;top:0;z-index:20}
+nav ul{list-style:none;margin:0 auto;padding:0;display:flex;flex-wrap:wrap;justify-content:center;max-width:960px}
+nav a{
+  display:block;color:#fff;text-decoration:none;font-weight:700;
+  padding:14px 20px;text-transform:uppercase;letter-spacing:.5px;font-size:.9rem;
+}
+nav a:hover,nav a.active{background:var(--red);color:#fff}
+
+/* Hero flames strip */
+.flames{background:#000 url('assets/flames.jpg') center/cover no-repeat;height:90px}
+
+/* Layout */
+main{max-width:960px;margin:0 auto;padding:26px 16px 60px}
+section{margin-bottom:40px}
+h1,h2,h3{font-family:"Arial Black",Impact,sans-serif;line-height:1.2}
+h1{font-size:2rem;color:var(--red-dark);margin:.2em 0}
+h2{font-size:1.5rem;color:var(--ink);border-bottom:3px solid var(--red);padding-bottom:6px;margin-top:1.6em}
+.subtitle{color:#555;font-weight:600;margin-top:0}
+
+/* Callout / banner box */
+.callout{
+  background:var(--red);color:#fff;border-radius:10px;padding:22px 24px;text-align:center;
+  box-shadow:0 4px 14px rgba(0,0,0,.2)
+}
+.callout h2{color:#fff;border:0;margin:.1em 0}
+.callout .big{font-size:1.25rem;font-weight:800}
+.callout a.btn{background:var(--gold);color:#111}
+
+/* Buttons */
+.btn{
+  display:inline-block;background:var(--red);color:#fff;text-decoration:none;font-weight:800;
+  padding:12px 26px;border-radius:6px;margin-top:10px;text-transform:uppercase;letter-spacing:.5px
+}
+.btn:hover{background:var(--red-dark)}
+
+/* Gun cards (current month) */
+.gun-cards{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
+.gun-card{
+  flex:1 1 300px;max-width:420px;background:#fff;border:1px solid #ddd;border-top:6px solid var(--red);
+  border-radius:10px;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,.08)
+}
+.gun-card .photo{
+  background:#fff;color:#999;display:flex;align-items:center;justify-content:center;
+  height:190px;font-style:italic;font-size:.9rem;text-align:center;padding:8px
+}
+.gun-card .photo img{height:100%;width:100%;object-fit:contain}
+.gun-card .body{padding:16px 18px}
+.gun-card .date{display:inline-block;background:var(--ink);color:var(--gold);font-weight:700;
+  font-size:.8rem;padding:4px 10px;border-radius:4px;text-transform:uppercase}
+.gun-card h3{margin:.5em 0 .3em;font-size:1.15rem}
+.winner-slot{
+  margin-top:12px;padding:12px 14px;background:#fff8e6;border:2px dashed var(--gold);border-radius:8px
+}
+.winner-slot .label{font-weight:800;text-transform:uppercase;font-size:.75rem;color:#8a6d00;letter-spacing:1px}
+.winner-slot .name{font-size:1.25rem;font-weight:800;color:var(--red-dark);min-height:1.4em}
+.winner-slot .pending{color:#b28a00;font-style:italic;font-weight:600}
+
+/* Tables */
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.raffle{width:100%;border-collapse:collapse;background:#fff;font-size:.93rem;min-width:560px}
+table.raffle caption{text-align:left;font-weight:800;font-size:1.05rem;padding:10px 0;color:var(--red-dark)}
+table.raffle th{background:var(--ink);color:#fff;text-align:left;padding:10px 12px;font-size:.82rem;text-transform:uppercase}
+table.raffle td{padding:9px 12px;border-bottom:1px solid #e5e5e5;vertical-align:top}
+table.raffle tr:nth-child(even) td{background:#faf7f2}
+table.raffle .winner{font-weight:700}
+table.raffle .pending{color:#bbb;font-style:italic}
+.earlybird td{background:#fff3d6 !important;font-weight:700}
+
+/* Info grid */
+.info-grid{display:flex;flex-wrap:wrap;gap:16px}
+.info-grid .box{flex:1 1 220px;background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:16px}
+.info-grid .box h3{margin:0 0 .4em;color:var(--red-dark);font-size:1rem}
+
+/* Contact form */
+form.contact{background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:20px;max-width:520px}
+form.contact label{display:block;font-weight:700;margin:12px 0 4px}
+form.contact input,form.contact textarea{width:100%;padding:10px;border:1px solid #bbb;border-radius:5px;font-size:1rem;font-family:inherit}
+
+/* Gallery grid */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.gallery-grid .tile{display:block;overflow:hidden;border-radius:8px;border:2px solid #ddd;background:#000;aspect-ratio:4/3}
+.gallery-grid .tile img{width:100%;height:100%;object-fit:cover;transition:transform .25s,opacity .25s;cursor:pointer;opacity:.96}
+.gallery-grid .tile:hover img{transform:scale(1.06);opacity:1}
+
+/* Lightbox */
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:100}
+#lightbox.open{display:flex}
+#lightbox img{max-width:92vw;max-height:82vh;border:3px solid #fff;border-radius:4px}
+#lightbox .lb-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);color:#fff;border:0;font-size:2.4rem;padding:6px 20px;cursor:pointer;border-radius:8px;user-select:none}
+#lightbox .lb-btn:hover{background:var(--red)}
+#lightbox .lb-prev{left:16px}
+#lightbox .lb-next{right:16px}
+#lightbox .lb-close{position:absolute;top:16px;right:22px;background:none;border:0;color:#fff;font-size:2.6rem;cursor:pointer;line-height:1}
+#lightbox .lb-count{position:absolute;bottom:20px;left:0;right:0;text-align:center;color:#eee;font-weight:600}
+@media(max-width:600px){#lightbox .lb-btn{font-size:1.6rem;padding:4px 12px}}
+
+/* Footer */
+footer{background:#000;color:#bbb;text-align:center;padding:26px 16px;font-size:.85rem}
+footer a{color:var(--gold)}
+footer .arch{max-height:40px;margin:0 auto 10px;opacity:.85}
+
+@media(max-width:600px){
+  nav a{padding:11px 13px;font-size:.8rem}
+  h1{font-size:1.6rem}
+  .site-header img{max-height:52px}
+}
